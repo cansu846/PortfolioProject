@@ -39,6 +39,12 @@ namespace PortfolioProject
 
             services.AddScoped<ISkillService, SkillManager>();
             services.AddScoped<ISkillDal, EfSkillDal>();
+
+            services.AddScoped<IPortfolioService, PortfolioManager>();
+            services.AddScoped<IPortfolioDal, EfPortfolioDal>();
+
+            services.AddScoped<IExperienceService, ExperienceManager>();
+            services.AddScoped<IExperienceDal, EfExperienceDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
