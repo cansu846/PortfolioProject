@@ -8,7 +8,10 @@ namespace PortfolioProject.Controllers
         {
             return View();
         }
-
+        public PartialViewResult HeadPartial()
+        {
+            return PartialView();
+        }
         public PartialViewResult SideNavbarPartial()
         {
             return PartialView();
