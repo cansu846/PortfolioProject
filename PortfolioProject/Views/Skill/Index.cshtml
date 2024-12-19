@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model List<Skill>
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Skills</h3>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name" >Project</th>
+                <th scope="col" class="sort">Skill</th>
+                <th scope="col" class="sort" data-sort="completion">Completion</th>
+                <th scope="col" >Edit</th>
+                <th scope="col">Delete</th>
+
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach(var item in Model){
+                <tr>
+                    <td >@item.SkillID</td>
+                    <td >
+                        @item.Header
+                    </td>
+
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <span class="completion mr-2">@item.Value%</span>
+                            <div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100" style="width:  @item.Value%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td >
+                        <button class="btn btn-warning">Edit</button>
+                    </td>
+                    <td>
+                        <button  class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>  
+    </table>
+    <div class="d-flex justify-content-end m-5"><button type="button" class="btn btn-primary btn-lg btn-block">Add Skill</button></div>
+
+</div>

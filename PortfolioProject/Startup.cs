@@ -45,6 +45,12 @@ namespace PortfolioProject
 
             services.AddScoped<IExperienceService, ExperienceManager>();
             services.AddScoped<IExperienceDal, EfExperienceDal>();
+
+            services.AddScoped<IContactService, ContactManager>();
+            services.AddScoped<IContactDal, EfContactDal>();
+
+            services.AddScoped<IMessageService, MessageManager>();
+            services.AddScoped<IMessageDal, EfMessageDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
