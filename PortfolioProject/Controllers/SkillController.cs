@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PortfolioProject.Controllers
@@ -14,6 +15,19 @@ namespace PortfolioProject.Controllers
         {
             var values = _skillService.GetAll();
             return View(values);
+        }
+
+        [HttpGet]
+        public IActionResult AddSkill()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddSkill(Skill newSkill)
+        {
+            _skillService.Add(newSkill);
+            return View();
         }
     }
 }
