@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model List<Experience>
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Skills</h3>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort">Experience</th>
+                <th scope="col" class="sort" data-sort="completion">Date</th>
+           @*      <th scope="col" class="sort" data-sort="completion">Company</th>
+                <th scope="col" class="sort" data-sort="completion">Work Type</th>
+                <th scope="col" class="sort" data-sort="completion">Description</th> *@
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td >@item.ExperienceID</td>
+                    <td>
+                        @item.Name
+                    </td>
+
+                    <td>
+                        @item.Date
+                    </td>
+                   @*  <td>
+                        @item.Company
+                    </td>
+                    <td>
+                        @item.WorkType
+                    </td>
+                    <td>
+                        @item.Description
+                    </td> *@
+                    <td>
+                        <a href="/Experience/EditExperience/@item.ExperienceID" class="btn btn-warning">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/Experience/DeleteExperience/@item.ExperienceID" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-end m-5"><a href="/Experience/AddExperience/" class="btn btn-primary btn-lg btn-block" onclick="">Add Experience</a></div>
+
+</div>

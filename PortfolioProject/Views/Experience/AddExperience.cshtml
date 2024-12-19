@@ -1,0 +1,39 @@
+﻿@model Experience
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="p-4">
+    <h1 class="text-center p-3">Add Experience</h1>
+
+    <form method="post" action="/Experience/AddExperience/">
+        <div class="form-group">
+            <label for="name">Experience Title</label>
+            <input type="text" class="form-control" id="name" asp-for="Name" placeholder="Enter Experience Title">
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="text" class="form-control" id="date" asp-for="Date" placeholder="Enter Experience Date (Example: August 2024-September 2024)">
+        </div>
+        <div class="form-group">
+            <label for="img">Image Url</label>
+            <input type="text" class="form-control" id="img" asp-for="ImageUrl" placeholder="Enter Image Url">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" asp-for="Description" placeholder="Enter Experience Description">
+        </div>
+        <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" class="form-control" id="company" asp-for="Company" placeholder="Enter Company">
+        </div>
+        <div class="form-group">
+            <label for="worktype">Work Type</label>
+            <input type="text" class="form-control" id="worktype" asp-for="WorkType" placeholder="Enter Work Type">
+        </div>
+
+        <div class=" d-flex justify-content-end mr-3">
+            <button type="submit" class="btn btn-primary btn-md">Add</button>
+        </div>
+    </form>
+
+</div>
