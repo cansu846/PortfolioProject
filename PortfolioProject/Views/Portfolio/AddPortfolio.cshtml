@@ -1,0 +1,23 @@
+﻿@model Portfolio
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="p-4">
+    <h1 class="text-center p-3">Add Portfolio</h1>
+
+    <form method="post" action="/Portfolio/AddPortfolio/">
+        <div class="form-group">
+            <label for="name">Portfolio Name</label>
+            <input type="text" class="form-control" id="name" asp-for="Name" placeholder="Enter Portfolio Name">
+        </div>
+        <div class="form-group">
+            <label for="date">ImageUrl</label>
+            <input type="text" class="form-control" id="date" asp-for="ImageUrl" placeholder="Enter Imag Url ">
+        </div>
+      
+        <div class=" d-flex justify-content-end mr-3">
+            <button type="submit" class="btn btn-primary btn-md">Add</button>
+        </div>
+    </form>
+
+</div>

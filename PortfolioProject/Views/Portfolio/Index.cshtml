@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model List<Portfolio>
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Skills</h3>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort">Project Name</th>
+                <th scope="col" class="sort" data-sort="completion">Url</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PortfolioID</td>
+                    <td>
+                        @item.Name
+                    </td>
+
+                    <td>
+                        <a href="https://github.com/cansu846">
+                            <img height="73px" width="100px" src="~/@item.ImageUrl?" >
+@*                             @item.ImageUrl
+ *@                       </a>
+                    </td>
+                  
+                    <td>
+                        <a href="/Portfolio/EditPortfolio/@item.PortfolioID" class="btn btn-warning">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/Portfolio/DeletePortfolio/@item.PortfolioID" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-end m-5"><a href="/Portfolio/AddPortfolio/" class="btn btn-primary btn-lg btn-block" onclick="">Add Portfolio</a></div>
+
+</div>

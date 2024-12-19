@@ -1,0 +1,26 @@
+﻿@model Portfolio
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="p-4">
+    <h1 class="text-center p-3">Edit Experience</h1>
+
+    <form method="post" action="/Portfolio/EditPortfolio/">
+
+        <input type="hidden" asp-for="PortfolioID">
+
+        <div class="form-group">
+            <label for="name">Portfolio Name</label>
+            <input type="text" class="form-control" id="name" asp-for="Name" placeholder="Enter Portfolio Name">
+        </div>
+        <div class="form-group">
+            <label for="date">Image Url</label>
+            <input type="text" class="form-control" id="date" asp-for="ImageUrl" placeholder="Enter Image Url">
+        </div>
+     
+        <div class=" d-flex justify-content-end mr-3">
+            <button type="submit" class="btn btn-primary btn-md">Edit</button>
+        </div>
+    </form>
+
+</div>
