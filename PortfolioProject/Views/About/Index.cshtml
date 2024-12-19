@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model List<About>
+
+<div class="card-header border-0">
+    <h3 class="mb-0">About</h3>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort">Name</th>
+                <th scope="col" class="sort" >Age</th>
+                <th scope="col" class="sort">Email</th>
+                <th scope="col" class="sort">Phone</th>
+
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.AboutID</td>
+                    <td>
+                        @item.Header
+                    </td>
+
+                    <td>
+                        @item.Age
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        @item.Phone
+                    </td>
+                    <td>
+                        <a href="/About/EditAbout/@item.AboutID" class="btn btn-warning">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/About/DeleteAbout/@item.AboutID" class="btn btn-danger">Delete</a>
+                    </td>
+                  
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-end m-5"><a href="/About/AddAbout/" class="btn btn-primary btn-lg btn-block" onclick="">Add About</a></div>
+
+</div>

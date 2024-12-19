@@ -1,0 +1,31 @@
+﻿@model Feature
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="p-4">
+    <h1 class="text-center p-3">Edit Feature</h1>
+
+    <form method="post" action="/Feature/EditFeature/">
+
+        <input type="hidden" asp-for="FeatureID">
+
+        <div class="form-group">
+            <label for="name">Feature Name</label>
+            <input type="text" class="form-control" id="name" asp-for="Name" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="surname">Surname</label>
+            <input type="text" class="form-control" id="age" asp-for="Surname" placeholder="Enter Surname">
+        </div>
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" asp-for="Title" placeholder="Enter Title">
+        </div>
+
+        <div class=" d-flex justify-content-end mr-3">
+            <button type="submit" class="btn btn-primary btn-md">Edit</button>
+        </div>
+    </form>
+
+</div>

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Feature\AddFeature.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="wwwroot\argon-dashboard-master\assets\vendor\gulp-copy\node_modules\yargs-parser\LICENSE.txt" />
     <Content Include="wwwroot\argon-dashboard-master\assets\vendor\gulp-copy\node_modules\yargs\locales\be.json" />
     <Content Include="wwwroot\argon-dashboard-master\assets\vendor\gulp-copy\node_modules\yargs\locales\de.json" />
@@ -31,6 +35,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\About\AddAbout.cshtml" />
+    <None Include="Views\Feature\AddFeature.cshtml" />
     <None Include="wwwroot\argon-dashboard-master\.DS_Store" />
     <None Include="wwwroot\argon-dashboard-master\.github\workflows\main.yml" />
     <None Include="wwwroot\argon-dashboard-master\assets\vendor\gulp-copy\node_modules\arr-diff\index.js" />

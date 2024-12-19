@@ -1,0 +1,36 @@
+﻿@model About
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="p-4">
+    <h1 class="text-center p-3">Edit About</h1>
+
+    <form method="post" action="/About/EditAbout/">
+
+        <input type="hidden" asp-for="AboutID">
+
+        <div class="form-group">
+            <label for="name">About Header</label>
+            <input type="text" class="form-control" id="name" asp-for="Header" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" asp-for="Age" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="age" asp-for="Email" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="number" class="form-control" id="phone" asp-for="Phone" placeholder="">
+        </div>
+     
+        <div class=" d-flex justify-content-end mr-3">
+            <button type="submit" class="btn btn-primary btn-md">Edit</button>
+        </div>
+    </form>
+
+</div>
