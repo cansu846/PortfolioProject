@@ -27,7 +27,20 @@ namespace PortfolioProject.Controllers
         public IActionResult AddSkill(Skill newSkill)
         {
             _skillService.Add(newSkill);
-            return View();
+            return RedirectToAction("Index");
+        }
+
+
+        [HttpGet]
+        public IActionResult DeleteSkill(int id)
+        {
+            var isExist = _skillService.GetByID(id);
+            if (isExist != null)
+            {
+                _skillService.delete(isExist);
+            }
+            
+            return RedirectToAction("Index");
         }
     }
 }
