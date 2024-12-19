@@ -1,0 +1,25 @@
+﻿@model Skill
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="p-4">
+    <h1 class="text-center p-3">Edit Skill</h1>
+
+    <form method="post" action="/Skill/EditSkill/">
+        <input type="hidden" asp-for="SkillID" />
+
+        <div class="form-group">
+            <label for="Header">Skill Name</label>
+            <input type="text" class="form-control" id="Header" name="Header" asp-for="Header" placeholder="Enter Skill">
+        </div>
+        <div class="form-group">
+            <label for="Value">Value</label>
+            <input type="number" class="form-control" id="Value" name="Value" asp-for="Value" placeholder="Enter skill value example: 70">
+        </div>
+
+        <div class=" d-flex justify-content-end mr-3">
+            <button type="submit" class="btn btn-primary btn-md">Edit</button>
+        </div>
+    </form>
+
+</div>

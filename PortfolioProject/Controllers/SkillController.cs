@@ -34,12 +34,26 @@ namespace PortfolioProject.Controllers
         [HttpGet]
         public IActionResult DeleteSkill(int id)
         {
-            var isExist = _skillService.GetByID(id);
-            if (isExist != null)
+            var isExsist = _skillService.GetByID(id);
+            if (isExsist != null)
             {
-                _skillService.delete(isExist);
+                _skillService.delete(isExsist);
             }
             
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult EditSkill(int id)
+        {
+            var isExsist = _skillService.GetByID(id);
+            return View(isExsist);
+        }
+
+        [HttpPost]
+        public IActionResult EditSkill(Skill newSkill)
+        {
+            _skillService.update(newSkill);
             return RedirectToAction("Index");
         }
     }

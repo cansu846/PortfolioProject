@@ -1,16 +1,19 @@
-	
-	ViewComponent, bir Controller gibi çal???r, ancak daha küçük ve ba??ms?z bir mant?k birimidir.
-Invoke metodu, ViewComponent'in ça?r?ld???nda çal??t?raca?? mant??? içerir. Yani, bu metot ViewComponent'in "giri? noktas?d?r".
-Invoke ad?, bu mant???n, bir metot ça?r?s?(invocation) arac?l???yla ba?lat?ld???n? belirtir.
+ï»¿	
+	ViewComponent, bir Controller gibi Ã§al???r, ancak daha kÃ¼Ã§Ã¼k ve ba??ms?z bir mant?k birimidir.
+Invoke metodu, ViewComponent'in Ã§a?r?ld???nda Ã§al??t?raca?? mant??? iÃ§erir. Yani, bu metot ViewComponent'in "giri? noktas?d?r".
+Invoke ad?, bu mant???n, bir metot Ã§a?r?s?(invocation) arac?l???yla ba?lat?ld???n? belirtir.
 
-	Senkron i?lem, bir görevin tamamlanmas?n? bekleyen bir yürütme modelidir.
-Bir i?lem, tamamen tamamlanmadan bir sonraki sat?ra geçilmez. Yani i?lemler s?ral? olarak yürütülür. E?er veri alma i?lemi çok uzun sürerse (örne?in, bir API ça?r?s? yap?yorsa), 
-uygulama donmu? gibi görünür ve kullan?c? deneyimi olumsuz etkilenir.
+	Senkron i?lem, bir gÃ¶revin tamamlanmas?n? bekleyen bir yÃ¼rÃ¼tme modelidir.
+Bir i?lem, tamamen tamamlanmadan bir sonraki sat?ra geÃ§ilmez. Yani i?lemler s?ral? olarak yÃ¼rÃ¼tÃ¼lÃ¼r. E?er veri alma i?lemi Ã§ok uzun sÃ¼rerse (Ã¶rne?in, bir API Ã§a?r?s? yap?yorsa), 
+uygulama donmu? gibi gÃ¶rÃ¼nÃ¼r ve kullan?c? deneyimi olumsuz etkilenir.
 
-	Asenkron i?lem, bir görevin tamamlanmas?n? beklemek yerine, i?lemi ba?lat?r ve di?er görevlerin çal??mas?na devam eder. 
-Görev tamamland???nda, i?lem sonuçlar?na geri dönülür.
+	Asenkron i?lem, bir gÃ¶revin tamamlanmas?n? beklemek yerine, i?lemi ba?lat?r ve di?er gÃ¶revlerin Ã§al??mas?na devam eder. 
+GÃ¶rev tamamland???nda, i?lem sonuÃ§lar?na geri dÃ¶nÃ¼lÃ¼r.
 
-		Asenkronun Özellikleri:
+		Asenkronun Ã–zellikleri:
 		??lem, program?n ana ak???n? bloklamaz.
-		Di?er i?lemler, uzun süren i?lemler devam ederken çal??abilir.
-		Daha karma??k görünebilir, ancak yüksek performans sa?lar.
+		Di?er i?lemler, uzun sÃ¼ren i?lemler devam ederken Ã§al??abilir.
+		Daha karma??k gÃ¶rÃ¼nebilir, ancak yÃ¼ksek performans sa?lar.
+
+
+.asp-for Ã¶zelliÄŸi, bir form Ã¶ÄŸesini doÄŸrudan modeldeki bir Ã¶zelliÄŸe baÄŸlar. Bu sayede hem model verilerinin forma, hem de form verilerinin modele otomatik olarak aktarÄ±lmasÄ± saÄŸlanÄ±r.
