@@ -1,6 +1,9 @@
 ﻿using BusinessLayer.Abstract;
+using BusinessLayer.ValidationRules;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace PortfolioProject.Controllers
 {
@@ -26,9 +29,22 @@ namespace PortfolioProject.Controllers
         [HttpPost]
         public IActionResult AddPortfolio(Portfolio portfolio)
         {
-            _portfolioService.Add(portfolio);
-
-            return RedirectToAction("Index");
+            PortfolioValidator validator = new PortfolioValidator();
+            ValidationResult result = validator.Validate(portfolio);
+            if (result.IsValid)
+            {
+                _portfolioService.Add(portfolio);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach(var item in result.Errors)
+                {
+                    Console.WriteLine(item.ErrorMessage);
+                }
+                return View();
+            }
+           
         }
 
 
