@@ -17,3 +17,14 @@ Görev tamamland???nda, i?lem sonuçlar?na geri dönülür.
 
 
 .asp-for özelliği, bir form öğesini doğrudan modeldeki bir özelliğe bağlar. Bu sayede hem model verilerinin forma, hem de form verilerinin modele otomatik olarak aktarılması sağlanır.
+
+Partial View:
+	Eğer veri işleme veya bir iş mantığına ihtiyaç duymayan, yalnızca bir HTML şablonunu parçalamak için bir yapı gerekiyorsa Partial View kullanılır.
+
+	Genel Karşılaştırma
+Özellik	Partial View	ViewComponent
+İş Mantığı	İş mantığı içermez veya minimaldir.	İş mantığı barındırabilir.
+Bağımsızlık	Kontrolöre bağımlıdır.	Kontrolörden bağımsızdır.
+Performans	Performansı göreceli olarak daha düşüktür.	Daha optimize ve performanslıdır.
+Veri Kaynağı	Geçerli modelden veri alır.	Kendi model ve verisini yönetebilir.
+Test Edilebilirlik	Test edilmesi zordur.	Daha kolay test edilebilir.

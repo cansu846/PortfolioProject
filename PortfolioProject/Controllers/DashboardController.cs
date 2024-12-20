@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DataAccessLayer.Concrete;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace PortfolioProject.Controllers
 {
@@ -24,9 +26,10 @@ namespace PortfolioProject.Controllers
         public PartialViewResult TopNavbarPartial() { 
             return PartialView();
         }
-        public PartialViewResult HeaderPartial()
-        {
-            return PartialView();   
-        }
+        //public PartialViewResult HeaderPartial()
+        //{
+          
+        //    return PartialView();   
+        //}
     }
 }

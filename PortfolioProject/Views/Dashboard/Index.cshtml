@@ -7,10 +7,10 @@
 <!-- Main content -->
 <div class="main-content" id="panel">
     @await Html.PartialAsync("/Views/Dashboard/TopNavbarPartial.cshtml")
-    @await Html.PartialAsync("/Views/Dashboard/HeaderPartial.cshtml")
+    @await Component.InvokeAsync("DashboardHeaderComponent")
     <!-- Page content -->
     <div class="container-fluid mt--6">
-        <div class="row">
+      @*   <div class="row">
             <div class="col-xl-8">
                 <div class="card bg-default">
                     <div class="card-header bg-transparent">
@@ -64,7 +64,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> *@
         <div class="row">
             <div class="col-xl-8">
                 <div class="card">
