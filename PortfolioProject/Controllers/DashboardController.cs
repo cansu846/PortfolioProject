@@ -28,8 +28,12 @@ namespace PortfolioProject.Controllers
         }
         //public PartialViewResult HeaderPartial()
         //{
-          
+
         //    return PartialView();   
         //}
+        public PartialViewResult FooterPartial()
+        {
+            return PartialView();
+        }
     }
 }
