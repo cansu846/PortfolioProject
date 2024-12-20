@@ -7,18 +7,17 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Message
+    public class UserMessage
     {
         [Key] // Primary key olduğunu belirtir
-        public int MessageID { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
+        public int UserMessageID { get; set; }
+        public string Title { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
 
         //Mesajın okunup okunmadı bilgisini tutar
         public bool Status { get; set; }
-        //public int UserID { get; set; } // Foreign key
-        //public User User { get; set; } // Navigation property
+        public int UserID { get; set; } // Foreign key
+        public User User { get; set; } // Navigation property
     }
 }

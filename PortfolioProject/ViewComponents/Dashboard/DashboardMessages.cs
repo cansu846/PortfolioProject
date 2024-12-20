@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace PortfolioProject.ViewComponents.Dashboard
 {
     public class DashboardMessages:ViewComponent
     {
+        private readonly IUserMessageService _userMessageService;
+        public DashboardMessages(IUserMessageService userMessageService)
+        {
+            _userMessageService = userMessageService;
+        }
         public IViewComponentResult Invoke()
         {
-            return View();
+            //Bu metodta include cagırılmıştır böylece ilişkili tabloların verilerini kullanabiliriz.
+            var values = _userMessageService.GetUserMessageWithUser();
+
+            return View(values);
         }
     }
 }

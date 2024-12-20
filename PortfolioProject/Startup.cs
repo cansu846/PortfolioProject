@@ -51,6 +51,9 @@ namespace PortfolioProject
 
             services.AddScoped<IMessageService, MessageManager>();
             services.AddScoped<IMessageDal, EfMessageDal>();
+
+            services.AddScoped<IUserMessageService, UserMessageManager>();
+            services.AddScoped<IUserMessageDal, EfUserMessageDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
