@@ -32,7 +32,7 @@ namespace PortfolioProject.Controllers
         [HttpGet]   
         public IActionResult Register()
         {
-            return View();
+            return View(new UserRegisterViewModel());
         }
 
         [HttpPost]
@@ -50,25 +50,26 @@ namespace PortfolioProject.Controllers
                     ImageUrl = userRegisterViewModel.ImageUrl,
                     Email = userRegisterViewModel.Email,
                 };
-
-                var result = await _userManager.CreateAsync(newUser, userRegisterViewModel.Password);
-                if (result.Succeeded)
-                {
-                    //Auth controller içindeki Login Methoduna yönlendirir
-                    return RedirectToAction("Login", "Auth");
-                }
-
-                else
-                { 
-                    foreach(var item in result.Errors)
+                if (userRegisterViewModel.Password == userRegisterViewModel.ConfirmPassword) {
+                    var result = await _userManager.CreateAsync(newUser, userRegisterViewModel.Password);
+                    if (result.Succeeded)
                     {
-                        ModelState.AddModelError("", item.Description);
+                        //Auth controller içindeki Login Methoduna yönlendirir
+                        return RedirectToAction("Login", "Auth");
                     }
+
+                    else
+                    { 
+                        foreach(var item in result.Errors)
+                        {
+                            ModelState.AddModelError("", item.Description);
+                        }
                    
+                    }
                 }
             }
 
-            return View();
+            return View(userRegisterViewModel);
         }
     }
 }

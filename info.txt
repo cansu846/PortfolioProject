@@ -97,3 +97,16 @@ UserManager Ne İşe Yarar?
 		UserManager’in Servis Olarak Eklenmesi: ASP.NET Core uygulamasında UserManager, Dependency Injection (DI) ile kullanılır ve genellikle bir kontrolöre veya hizmete enjekte edilir.
 
 
+
+ASP.NET Core'da asp-validation-summary, bir Razor sayfasında veya View'de model doğrulama hatalarını görüntülemek için kullanılan bir HTML yardımcı özelliğidir.
+asp-validation-summary Türleri
+asp-validation-summary özelliği, doğrulama hatalarını nasıl göstereceğinizi belirlemek için üç farklı değer alabilir:
+
+ModelOnly
+Sadece model düzeyindeki doğrulama hatalarını görüntüler. Alanlara özel hatalar (asp-validation-for) bu özet içinde yer almaz.
+
+All
+Hem model düzeyindeki doğrulama hatalarını hem de alanlara özel hataları görüntüler.
+
+None
+Hiçbir doğrulama mesajını görüntülemez. Genellikle stil veya JavaScript ile özelleştirilmiş bir hata gösterim mekanizması kullanıldığında tercih edilir.
