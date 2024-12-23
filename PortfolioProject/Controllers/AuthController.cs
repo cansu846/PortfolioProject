@@ -11,10 +11,11 @@ namespace PortfolioProject.Controllers
     public class AuthController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
-
-        public AuthController(UserManager<WriterUser> userManager)
+        private readonly SignInManager<WriterUser> _signInManager;
+        public AuthController(UserManager<WriterUser> userManager, SignInManager<WriterUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         [HttpGet]
@@ -24,10 +25,23 @@ namespace PortfolioProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(User user)
+        public async Task<IActionResult> Login(UserLoginViewModel userLoginViewModel)
         {
+            if (ModelState.IsValid) 
+            {
+                var result = await _signInManager.PasswordSignInAsync(userLoginViewModel.UserName, userLoginViewModel.Password,true,true);
+                if (result.Succeeded)
+                {
+                   return RedirectToAction("Index", "Default");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Password or UserName faulty");
+                }
+            }
             return View();
         }
+        //123456.Aa*
 
         [HttpGet]   
         public IActionResult Register()

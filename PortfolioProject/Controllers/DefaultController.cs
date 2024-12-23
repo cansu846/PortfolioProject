@@ -2,11 +2,13 @@
 using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace PortfolioProject.Controllers
 {
+    [Authorize]
     public class DefaultController : Controller
     {
         public IActionResult Index()

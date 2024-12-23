@@ -1,14 +1,4 @@
-﻿<!--
-=========================================================
-* Argon Dashboard - v1.2.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-
-* Copyright  Creative Tim (http://www.creative-tim.com)
-* Coded by www.creative-tim.com
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
+﻿@model UserLoginViewModel
 <!DOCTYPE html>
 <html>
 
@@ -152,13 +142,14 @@
                             <div class="text-center text-muted mb-4">
                                 <small>Or sign in with credentials</small>
                             </div>
-                            <form role="form">
+                            <form role="form" method="post" action="/Auth/Login/">
                                 <div class="form-group mb-3">
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Email" type="email">
+                                        <div asp-validation-for="UserName"></div>
+                                        <input class="form-control" asp-for="UserName" placeholder="UserName" type="text">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -166,7 +157,8 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Password" type="password">
+                                        <div asp-validation-for="Password"></div>
+                                        <input class="form-control" asp-for="Password" placeholder="Password" type="password">
                                     </div>
                                 </div>
                                 <div class="custom-control custom-control-alternative custom-checkbox">
@@ -176,17 +168,17 @@
                                     </label>
                                 </div>
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-primary my-4">Sign in</button>
+                                    <button type="submit" class="btn btn-primary my-4">Sign in</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-6">
+                       @*  <div class="col-6">
                             <a href="#" class="text-light"><small>Forgot password?</small></a>
-                        </div>
+                        </div> *@
                         <div class="col-6 text-right">
-                            <a href="#" class="text-light"><small>Create new account</small></a>
+                            <a href="/Auth/Register/" class="text-light"><small>Create new account</small></a>
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,11 @@
 ﻿using DataAccessLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace PortfolioProject.Controllers
 {
+   
     public class DashboardController : Controller
     {
         public IActionResult Index()

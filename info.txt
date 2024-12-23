@@ -110,3 +110,11 @@ Hem model düzeyindeki doğrulama hatalarını hem de alanlara özel hataları g
 
 None
 Hiçbir doğrulama mesajını görüntülemez. Genellikle stil veya JavaScript ile özelleştirilmiş bir hata gösterim mekanizması kullanıldığında tercih edilir.
+
+UserManager	SignInManager Kullanım Amaçları
+Kriter	UserManager	SignInManager
+Kullanıcı Yönetimi	Kullanıcı bilgilerini yönetmek ve güncellemek için kullanılır.	Kullanıcı giriş/çıkış işlemleri için kullanılır.
+Şifre Doğrulama	CheckPasswordAsync ile şifre doğrular.	Kullanıcı girişini ve şifre doğrulamayı yönetir.
+Oturum Yönetimi	Oturum yönetimi yapmaz.	Oturum durumunu ve süresini yönetir.
+Kimlik Sağlayıcılar	Sosyal medya hesaplarıyla bağlantı oluşturur.	Sosyal medya ile oturum açmayı destekler.
+İki Faktörlü Doğrulama	İlgili doğrulama kodlarını üretir ve kontrol eder.	İki faktörlü giriş işlemini yürütür.
