@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,7 +11,7 @@ namespace EntityLayer.Concrete
 {
     public class User
     {
-        [Key]
+        [Key]   
         public int UserID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
