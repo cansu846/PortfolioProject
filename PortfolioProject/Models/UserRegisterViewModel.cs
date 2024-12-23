@@ -10,7 +10,7 @@ namespace PortfolioProject.Models
         [Required(ErrorMessage = "Please fill field..")]
         public string SurName { get; set; }
 
-        [Required(ErrorMessage = "Please fill field..")]
+        //[Required(ErrorMessage = "Please fill field..")]
         public string ImageUrl { get; set; }
 
         [Required(ErrorMessage = "Please fill field..")]
@@ -23,7 +23,7 @@ namespace PortfolioProject.Models
         [Compare("Password",ErrorMessage = "Passwords must be match !")]
         public string ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "Please fill field..")]
+        //[Required(ErrorMessage = "Please fill field..")]
         public string Email { get; set; }
 
 

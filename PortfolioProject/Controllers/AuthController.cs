@@ -54,7 +54,8 @@ namespace PortfolioProject.Controllers
                 var result = await _userManager.CreateAsync(newUser, userRegisterViewModel.Password);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Auth", "Login");
+                    //Auth controller içindeki Login Methoduna yönlendirir
+                    return RedirectToAction("Login", "Auth");
                 }
 
                 else
