@@ -60,3 +60,40 @@ Varsayılan kullanıcı modeli (IdentityUser) yeterli olmadığında, kendi öze
 Varsayılan GUID tabanlı birincil anahtar yerine int, long veya başka bir tür kullanabilirsiniz.
 Role ilişkin ek özellikler eklemek istediğinizde, özelleştirilmiş bir rol sınıfı kullanabilirsiniz.
 IdentityDbContext<WriterUser, WriterRole, int> kullanımı, uygulamanızın kimlik doğrulama ve yetkilendirme gereksinimlerini özelleştirmek için idealdir. Kullanıcı ve rol modellerini genişleterek, uygulamanızın ihtiyaçlarına uygun bir yapı oluşturur.
+
+ASP.NET Core'daki UserManager, kimlik doğrulama işlemlerinde kullanıcı yönetimini kolaylaştırmak için kullanılan bir sınıftır. Bu sınıf, kullanıcı hesaplarını oluşturma, güncelleme, silme ve diğer işlemleri yapmaya olanak sağlar. UserManager, ASP.NET Core Identity sistemiyle birlikte çalışır ve kullanıcı tabanlı operasyonlar için merkezi bir bileşendir.
+
+UserManager Ne İşe Yarar?
+	UserManager sınıfı, bir ASP.NET Core uygulamasında kullanıcı yönetimiyle ilgili aşağıdaki işlemleri sağlar:
+
+	1. Kullanıcı Yönetimi
+	Kullanıcı oluşturma (CreateAsync)
+	Kullanıcı bilgilerini güncelleme (UpdateAsync)
+	Kullanıcıyı silme (DeleteAsync)
+	2. Kimlik Doğrulama ve Parola Yönetimi
+	Kullanıcı parolası belirleme ve değiştirme (AddPasswordAsync, ChangePasswordAsync)
+	Kullanıcının parolasını sıfırlama (ResetPasswordAsync)
+	3. Rol Yönetimi
+	Kullanıcıya rol ekleme veya kaldırma (AddToRoleAsync, RemoveFromRoleAsync)
+	Kullanıcının rollerini alma (GetRolesAsync)
+	4. Doğrulama İşlemleri
+	E-posta doğrulama işlemleri (GenerateEmailConfirmationTokenAsync, ConfirmEmailAsync)
+	Telefon numarası doğrulama işlemleri (GenerateChangePhoneNumberTokenAsync, ChangePhoneNumberAsync)
+	5. Kullanıcı Bilgilerini Sorgulama
+	Kullanıcı kimliğine göre kullanıcı bilgilerini getirme (FindByIdAsync)
+	Kullanıcı adına göre kullanıcıyı getirme (FindByNameAsync)
+	E-posta adresine göre kullanıcıyı getirme (FindByEmailAsync)
+	6. İki Faktörlü Kimlik Doğrulama (2FA)
+	İki faktörlü kimlik doğrulama durumunu kontrol etme (GetTwoFactorEnabledAsync)
+	İki faktörlü kimlik doğrulamayı etkinleştirme (SetTwoFactorEnabledAsync)
+	7. Kullanıcı Kilitleme ve Güvenlik
+	Kullanıcıyı kilitleme (SetLockoutEndDateAsync)
+	Kilit süresini kontrol etme (GetLockoutEndDateAsync)
+	8. Token Yönetimi
+	Parola sıfırlama ve e-posta doğrulama gibi işlemler için token oluşturma (GeneratePasswordResetTokenAsync, GenerateEmailConfirmationTokenAsync)
+	Token doğrulama (ResetPasswordAsync, ConfirmEmailAsync)
+
+	Nasıl Kullanılır?
+		UserManager’in Servis Olarak Eklenmesi: ASP.NET Core uygulamasında UserManager, Dependency Injection (DI) ile kullanılır ve genellikle bir kontrolöre veya hizmete enjekte edilir.
+
+

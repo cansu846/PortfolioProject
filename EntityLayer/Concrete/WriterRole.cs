@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
+    //IdentityRole AspNetRoles tablosunu ifade eder.
+    //Veri tabanında WriteRole adında bir tablo oluşmaz sadece IdentityRole tablsuna ek özellikler eklenir.
     public class WriterRole:IdentityRole<int>
     {
 
