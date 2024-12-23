@@ -28,3 +28,35 @@ Bağımsızlık	Kontrolöre bağımlıdır.	Kontrolörden bağımsızdır.
 Performans	Performansı göreceli olarak daha düşüktür.	Daha optimize ve performanslıdır.
 Veri Kaynağı	Geçerli modelden veri alır.	Kendi model ve verisini yönetebilir.
 Test Edilebilirlik	Test edilmesi zordur.	Daha kolay test edilebilir.
+
+
+IdentityDbContext Nedir?
+IdentityDbContext, ASP.NET Core Identity ile ilgili varlıkları (Users, Roles, Claims, Logins vb.) ve ilişkilerini yönetmek için gerekli olan hazır bir EF Core bağlam sınıfıdır. Varsayılan olarak aşağıdaki tablo yapılarını oluşturur:
+
+AspNetUsers: Kullanıcılar
+AspNetRoles: Roller
+AspNetUserRoles: Kullanıcı-Rol ilişkisi
+AspNetUserClaims: Kullanıcıya ait talepler
+AspNetRoleClaims: Role ait talepler
+AspNetUserLogins: Harici oturum açma bilgileri
+AspNetUserTokens: Kullanıcıya ait token bilgileri
+
+Neden Generic Kullanılmıştır?
+IdentityDbContext sınıfı, farklı projelerde özelleştirilebilir olması için generics (WriterUser, WriterRole, int) ile tanımlanmıştır. Bu sayede, varsayılan kullanıcı (IdentityUser) ve rol (IdentityRole) modelleri yerine, kendi özel modellerinizi tanımlayıp kullanabilirsiniz.
+
+WriterUser:
+Bu parametre, kullanıcıları temsil eden sınıfı belirtir. Örneğin, IdentityUser yerine kullanıcı modeline ek özellikler (ör. FirstName, LastName gibi) eklemek için özel bir sınıf olan WriterUser tanımlanabilir.
+
+WriterRole:
+Bu parametre, roller için kullanılan sınıfı belirtir. Eğer rol modelinde ek özellikler (ör. Description gibi) kullanmanız gerekiyorsa, bunu da özelleştirebilirsiniz.
+
+int:
+Varsayılan olarak string kullanılan anahtar tipi (Id) yerine, birincil anahtarın türünü (int) belirtir. Kimlik sütununun GUID yerine int olması gibi durumlarda bu özelleştirme yapılır.
+
+3. Neden Bu Şekilde Kullanılır?
+ASP.NET Core Identity'nin esnek ve özelleştirilebilir bir yapıya sahip olması için bu generics yaklaşımı kullanılır. Örneğin:
+
+Varsayılan kullanıcı modeli (IdentityUser) yeterli olmadığında, kendi özelliklerinizi içeren bir sınıf oluşturabilirsiniz.
+Varsayılan GUID tabanlı birincil anahtar yerine int, long veya başka bir tür kullanabilirsiniz.
+Role ilişkin ek özellikler eklemek istediğinizde, özelleştirilmiş bir rol sınıfı kullanabilirsiniz.
+IdentityDbContext<WriterUser, WriterRole, int> kullanımı, uygulamanızın kimlik doğrulama ve yetkilendirme gereksinimlerini özelleştirmek için idealdir. Kullanıcı ve rol modellerini genişleterek, uygulamanızın ihtiyaçlarına uygun bir yapı oluşturur.
