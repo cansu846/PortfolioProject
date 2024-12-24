@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 
 namespace PortfolioProject.Controllers
 {
+    
     [Authorize]
     public class DefaultController : Controller
     {
+        //Duyuruları görüntülemek için kullanılır
         public IActionResult Index()
         {
             return View();
