@@ -13,6 +13,8 @@ namespace EntityLayer.Concrete
         public int AnnouncementID { get; set; }
         public string Title { get; set; }
         public DateTime Date { get; set; }
+        
+        //Duyurunun türünü belirtmek için kullanılır
         public string Status { get; set; }
         public string Content { get; set; }
     }

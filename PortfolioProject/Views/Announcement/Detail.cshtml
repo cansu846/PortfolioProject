@@ -1,0 +1,35 @@
+﻿@model Announcement
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@* ASP.NET Yardımcıları (HtmlHelper)
+ASP.NET MVC'nin HTML yardımcıları, form elemanlarının kolayca oluşturulmasını sağlar:
+
+4.1. @Html.Label("ID")
+Açıklama: "ID" alanı için bir etiket (label) oluşturur.
+Görünümde: ID yazılı bir etiket oluşturur.
+4.2. @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+Açıklama: Announcement modelindeki ID özelliği için bir metin kutusu (textbox) oluşturur.
+@class: form-control sınıfı, Bootstrap gibi bir framework'te metin kutusuna stil uygulamak için kullanılır.
+4.3. @Html.Label("İçerik")
+Açıklama: "İçerik" alanı için bir etiket oluşturur.
+4.4. @Html.TextAreaFor(x => x.Content, 10, 3, new { @class = "form-control" })
+Açıklama: Announcement modelindeki Content özelliği için bir metin alanı (textarea) oluşturur.
+Parametreler:
+10, 3: Metin alanının satır ve sütun boyutlarını belirtir.
+@class: Stil vermek için kullanılan CSS sınıfı. *@
+
+<h1 class="text-center mt-4">Duyuru Detayları</h1>
+<br />
+<div class="row">
+    <div class="col-6 mx-auto">
+        <form class="form-group p-3">
+            @Html.Label("ID")
+            @Html.TextBoxFor(x => x.AnnouncementID, new { @class = "form-control" })
+            <br />
+            @Html.Label("Description")
+            @Html.TextAreaFor(x => x.Content, 10, 3, new { @class = "form-control" })
+        </form>
+    </div>
+  
+</div>

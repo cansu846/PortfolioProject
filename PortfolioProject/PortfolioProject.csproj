@@ -123,4 +123,8 @@
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\userimage\" />
+  </ItemGroup>
+
 </Project>

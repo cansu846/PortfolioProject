@@ -59,6 +59,9 @@ namespace PortfolioProject
             services.AddScoped<IUserMessageService, UserMessageManager>();
             services.AddScoped<IUserMessageDal, EfUserMessageDal>();
 
+            services.AddScoped<IAnnouncementService, AnnouncementManager>();
+            services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
+
             services.AddDbContext<Context>();
 
             services.AddIdentity<WriterUser, WriterRole>()

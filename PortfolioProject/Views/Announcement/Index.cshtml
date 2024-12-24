@@ -1,0 +1,72 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Announcement";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    string color = "";
+}
+@model List<Announcement>
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Announcement</h3>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort">Title</th>
+                <th scope="col" class="sort">Date</th>
+                <th scope="col" class="sort">Type</th>
+                <th scope="col" class="sort">Detail</th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+                if (item.Status == "New Article")
+                {
+                    color = "badge badge-danger";
+                }
+                if (item.Status == "New Video")
+                {
+                    color = "badge badge-warning";
+                }
+                if (item.Status == "Conference")
+                {
+                    color = "badge badge-info";
+                }
+                if (item.Status == "Workshop")
+                {
+                    color = "badge badge-success";
+                }
+                if (item.Status == "Bootcamp")
+                {
+                    color = "badge badge-primary";
+                }
+                <tr>
+                    <td>@item.AnnouncementID</td>
+                    <td>
+                        @item.Title
+                    </td>
+
+                    <td>
+                        @item.Date.ToString("dd-MMMM-yyyy")
+                    </td>
+                    <td class="@color mt-4 badge-pill p-2">
+                        @item.Status
+                    </td>
+                   
+                    <td>
+                        <a href="/Announcement/Detail/@item.AnnouncementID" class="btn btn-primary">Detail</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
