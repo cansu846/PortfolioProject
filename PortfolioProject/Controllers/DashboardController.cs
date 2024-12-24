@@ -25,14 +25,11 @@ namespace PortfolioProject.Controllers
             return PartialView();
         }
 
-        public PartialViewResult TopNavbarPartial() { 
-            return PartialView();
-        }
-        //public PartialViewResult HeaderPartial()
-        //{
-
-        //    return PartialView();   
+        //public PartialViewResult TopNavbarPartial() { 
+        //    return PartialView();
         //}
+       
+      
         public PartialViewResult FooterPartial()
         {
             return PartialView();

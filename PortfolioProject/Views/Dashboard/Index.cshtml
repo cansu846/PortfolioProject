@@ -6,7 +6,8 @@
 }
 <!-- Main content -->
 <div class="main-content" id="panel">
-    @await Html.PartialAsync("/Views/Dashboard/TopNavbarPartial.cshtml")
+   @*  @await Html.PartialAsync("/Views/Dashboard/TopNavbarPartial.cshtml") *@
+    @await Component.InvokeAsync("DashboardTopNavbar")
     @await Component.InvokeAsync("DashboardHeaderComponent")
     <!-- Page content -->
     <div class="container-fluid mt--6">

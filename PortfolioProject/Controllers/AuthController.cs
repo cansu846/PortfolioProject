@@ -24,6 +24,13 @@ namespace PortfolioProject.Controllers
             return View();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login","Auth");
+        }
+
         [HttpPost]
         public async Task<IActionResult> Login(UserLoginViewModel userLoginViewModel)
         {
