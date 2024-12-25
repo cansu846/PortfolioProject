@@ -1,5 +1,4 @@
-﻿using EntityLayer;
-using EntityLayer.Concrete;
+﻿using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IMessageDal:IRepositoryDal<Message>
+    public interface IWriterMessageDal:IRepositoryDal<WriterMessage>
     {
+        List<WriterMessage> GetByFilter(Expression<Func<WriterMessage,bool>> filter);
     }
 }

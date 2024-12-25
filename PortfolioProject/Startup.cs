@@ -62,10 +62,15 @@ namespace PortfolioProject
             services.AddScoped<IAnnouncementService, AnnouncementManager>();
             services.AddScoped<IAnnouncementDal, EfAnnouncementDal>();
 
+            services.AddScoped<IWriterMessageService, WriterMessageManager>();
+            services.AddScoped<IWriterMessageDal, EfWriterMessageDal>();
+
             services.AddDbContext<Context>();
 
             services.AddIdentity<WriterUser, WriterRole>()
                     .AddEntityFrameworkStores<Context>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

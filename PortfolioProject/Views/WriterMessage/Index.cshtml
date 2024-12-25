@@ -1,0 +1,28 @@
+﻿@model List<WriterMessage>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Date</th>
+            <th scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model){
+            <tr>
+                <th scope="row">@item.WriterMessageID</th>
+                <td>@item.Subject</td>
+                <td>@item.Date</td>
+                <td>
+                    <a href="/WriterMessage/ViewDetail/@item.WriterMessageID">View Detail</a>
+                </td>
+            </tr>
+        }
+       
+       
+    </tbody>
+</table>
