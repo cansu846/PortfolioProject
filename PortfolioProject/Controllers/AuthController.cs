@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace PortfolioProject.Controllers
 {
+    [AllowAnonymous]
     public class AuthController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;

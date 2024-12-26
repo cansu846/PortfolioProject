@@ -8,10 +8,13 @@ using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.Concrete.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -31,6 +34,7 @@ namespace PortfolioProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+          
             services.AddControllersWithViews();
             services.AddScoped<IFeatureService, FeatureManager>();
             services.AddScoped<IFeatureDal,EfFeatureDal>();
@@ -70,7 +74,45 @@ namespace PortfolioProject
             services.AddIdentity<WriterUser, WriterRole>()
                     .AddEntityFrameworkStores<Context>();
 
+            //// Authentication ve Authorization için gerekli servisler ekleniyor
+            //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            //        .AddCookie(options =>
+            //        {
+            //            options.Cookie.HttpOnly = true;
+            //            options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+            //            options.LoginPath = "/Auth/Login/"; // Giri? sayfas?
+            //            options.AccessDeniedPath = "/ErrorPage/Index/"; // Yetki eksikli?i sayfas?
+            //        });
 
+            // MVC ekleniyor ve global yetkilendirme politikas? tan?mlan?yor
+            services.AddControllersWithViews(config =>
+            {
+                // Varsay?lan yetkilendirme politikas?: Kimlik do?rulamas? gereksinimi
+                var policy = new AuthorizationPolicyBuilder()
+                               .RequireAuthenticatedUser()
+                               .Build();
+
+                // Tüm Controller ve Action'lara yetkilendirme filtresi ekleniyor
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+
+            //services.AddMvc(config =>
+            //{
+            //    var policy = new AuthorizationPolicyBuilder()
+            //                   .RequireAuthenticatedUser()
+            //                   .Build();
+            //    config.Filters.Add(new AuthorizeFilter(policy));
+            //});
+
+            //services.AddMvc();
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(100);
+                options.AccessDeniedPath = "/ErrorPage/Index/";
+                options.LoginPath = "/Auth/Login/";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -88,10 +130,10 @@ namespace PortfolioProject
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
 
-            app.UseAuthentication();
+        
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -118,3 +118,11 @@ Kullanıcı Yönetimi	Kullanıcı bilgilerini yönetmek ve güncellemek için ku
 Oturum Yönetimi	Oturum yönetimi yapmaz.	Oturum durumunu ve süresini yönetir.
 Kimlik Sağlayıcılar	Sosyal medya hesaplarıyla bağlantı oluşturur.	Sosyal medya ile oturum açmayı destekler.
 İki Faktörlü Doğrulama	İlgili doğrulama kodlarını üretir ve kontrol eder.	İki faktörlü giriş işlemini yürütür.
+
+Özellik	AddControllersWithViews	AddMvc
+API Desteği	Hayır	Evet
+Web Görünümleri (Views)	Evet	Evet
+Razor Pages	Hayır	Evet
+Minimal Konfigürasyon	Evet	Hayır
+Performans	Daha hızlı (daha az yük)	Daha fazla özellik yüklü
+Kapsam	Sadece Controller ve View'ler	Controller, View, API ve Razor Pages
