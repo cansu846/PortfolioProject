@@ -44,7 +44,9 @@ namespace PortfolioProject.Controllers
             m.Status = true;
             _messageService.Add(m);
 
-            return Redirect("/Default/Index/");
+            //aşağdakide kullanılabilir
+            //return Redirect("/Default/Index/")
+            return RedirectToAction("Index","Default");
         }
 
    

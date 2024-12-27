@@ -69,6 +69,9 @@ namespace PortfolioProject
             services.AddScoped<IWriterMessageService, WriterMessageManager>();
             services.AddScoped<IWriterMessageDal, EfWriterMessageDal>();
 
+            services.AddScoped<IWriterUserService, WriterUserManager>();
+            services.AddScoped<IWriterUserDal, EfWriterUserDal>();
+
             services.AddDbContext<Context>();
 
             services.AddIdentity<WriterUser, WriterRole>()
