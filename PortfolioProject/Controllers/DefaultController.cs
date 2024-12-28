@@ -30,7 +30,7 @@ namespace PortfolioProject.Controllers
 
 
         [HttpGet]
-        public PartialViewResult SendMessage()
+        public PartialViewResult SendMessagePartial()
         {
            
             return PartialView();

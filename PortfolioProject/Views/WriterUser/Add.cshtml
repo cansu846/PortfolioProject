@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model UserRegisterViewModel
+
+<form method="post" action="/WriterUser/Add/" class="p-4">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="surname" class="form-label">Surname</label>
+        <input type="text" class="form-control" id="name" asp-for="SurName">
+    </div>
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" asp-for="UserName">
+    </div>
+
+    <div class="mb-3">
+        <label for="imageurl" class="form-label">ImageUrl</label>
+        <input type="text" class="form-control" id="imageurl" asp-for="ImageUrl">
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" asp-for="Email">
+    </div>
+
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" asp-for="Password">
+    </div>
+
+    <div class="mb-3">
+        <label for="confirmpassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmpassword" asp-for="ConfirmPassword">
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Add User</button>
+</form>

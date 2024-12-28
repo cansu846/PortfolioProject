@@ -82,7 +82,7 @@
                 <h2 class="marker marker-center">Contact Me</h2>
             </div>
             <div class="row">
-                @await Html.PartialAsync("SendMessage")
+                        @await Html.PartialAsync("SendMessagePartial")
                 @await Component.InvokeAsync("ContactList")
             </div>
         </div>
@@ -93,5 +93,4 @@
     <div id="scrolltop"><a class="btn btn-secondary" href="#top"><span class="icon"><i class="fas fa-angle-up fa-x"></i></span></a></div>
     @await Html.PartialAsync("ScriptPartial");
   </body>
-</html>
 </html>

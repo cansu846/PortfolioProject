@@ -77,6 +77,9 @@ namespace PortfolioProject
             services.AddIdentity<WriterUser, WriterRole>()
                     .AddEntityFrameworkStores<Context>();
 
+            services.AddScoped<IPasswordHasher<WriterUser>, PasswordHasher<WriterUser>>();
+
+
             //// Authentication ve Authorization için gerekli servisler ekleniyor
             //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             //        .AddCookie(options =>
