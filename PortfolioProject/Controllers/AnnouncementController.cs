@@ -13,6 +13,7 @@ namespace PortfolioProject.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.active = "Announcement";
             var values = _announcementService.GetAll();
             return View(values);
         }

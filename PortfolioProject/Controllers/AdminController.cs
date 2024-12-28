@@ -15,6 +15,7 @@ namespace PortfolioProject.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.active = "Admin";
             var values = _writerUserService.GetAll();
             return View(values);
         }

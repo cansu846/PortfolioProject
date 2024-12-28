@@ -23,12 +23,14 @@ namespace PortfolioProject.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            ViewBag.active = "Login";
             return View();
         }
 
         [HttpGet]
         public async Task<IActionResult> LogOut()
         {
+            ViewBag.active = "Logout";
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login","Auth");
         }
@@ -36,6 +38,7 @@ namespace PortfolioProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(UserLoginViewModel userLoginViewModel)
         {
+            ViewBag.active = "Login";
             if (ModelState.IsValid) 
             {
                 var result = await _signInManager.PasswordSignInAsync(userLoginViewModel.UserName, userLoginViewModel.Password,true,true);
@@ -55,6 +58,7 @@ namespace PortfolioProject.Controllers
         [HttpGet]   
         public IActionResult Register()
         {
+            ViewBag.active = "Register";
             return View(new UserRegisterViewModel());
         }
 

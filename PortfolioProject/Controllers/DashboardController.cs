@@ -10,6 +10,7 @@ namespace PortfolioProject.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.active = "Dashboard";
             return View();
         }
 

@@ -13,6 +13,7 @@ namespace PortfolioProject.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.active = "Skill";
             var values = _skillService.GetAll();
             return View(values);
         }

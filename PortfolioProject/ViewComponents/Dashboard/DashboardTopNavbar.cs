@@ -18,5 +18,6 @@ namespace PortfolioProject.ViewComponents.Dashboard
             ViewBag.ImageUrl = user.ImageUrl;
             return View(user);  
         }
+ 
     }
 }

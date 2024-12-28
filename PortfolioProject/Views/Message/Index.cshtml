@@ -1,15 +1,20 @@
-﻿@model List<UserMessage>
+﻿@model IEnumerable<UserMessage>
 
-<div class="col-xl-7">
-    <div class="card">
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-xl-12">
+    <div class="card mt-3">
         <div class="card-header border-0">
             <div class="row align-items-center">
                 <div class="col">
                     <h3 class="mb-0">Messages</h3>
                 </div>
-                <div class="col text-right">
+              @*   <div class="col text-right">
                     <a href="/Message/Index/" class="btn btn-sm btn-primary">See all</a>
-                </div>
+                </div> *@
             </div>
         </div>
         <div class="table-responsive">
@@ -19,28 +24,30 @@
                     <tr>
                         <th scope="col">Username</th>
                         <th scope="col">Title</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Description</th>
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                     @foreach(var item in Model){
+                    @foreach (var item in Model.Reverse())
+                    {
                         <tr>
                             <th scope="row">
-                               @item.User.UserName
+                                @item.User.UserName
                             </th>
                             <td>
                                 @item.Title
                             </td>
                             <td>
-                                @if(item.Description.Length>20){
-                                    @item.Description.Substring(0, 20)
-                                }
-                                ...
+                                @item.User.Email
                             </td>
                             <td>
-                                @item.Date.ToString().Substring(0,10)
+                                @item.Description
+                            </td>
+                            <td>
+                                @item.Date.ToString().Substring(0, 10)
                             </td>
                             <td>
                                 @item.Status

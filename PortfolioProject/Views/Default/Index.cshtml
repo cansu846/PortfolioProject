@@ -82,7 +82,9 @@
                 <h2 class="marker marker-center">Contact Me</h2>
             </div>
             <div class="row">
-                        @await Html.PartialAsync("SendMessagePartial")
+@*                         @await Html.PartialAsync("SendMessagePartial")
+ *@                
+                @await Html.PartialAsync("SendUserMessagePartial")
                 @await Component.InvokeAsync("ContactList")
             </div>
         </div>

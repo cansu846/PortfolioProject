@@ -13,6 +13,7 @@ namespace PortfolioProject.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.active = "Experience";
             var values = _experienceService.GetAll();
             return View(values);  
         }

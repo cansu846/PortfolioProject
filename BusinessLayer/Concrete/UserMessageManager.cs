@@ -18,7 +18,7 @@ namespace BusinessLayer.Concrete
         }
         public void Add(UserMessage entity)
         {
-            throw new NotImplementedException();
+            _userMessageDal.Add(entity);
         }
 
         public void delete(UserMessage entity)

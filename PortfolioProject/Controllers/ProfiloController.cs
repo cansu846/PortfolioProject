@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace PortfolioProject.Controllers
 {
-    public class ProfileController : Controller
+    public class ProfiloController : Controller
     {
         private readonly UserManager<WriterUser> _userManager;
 
-        public ProfileController(UserManager<WriterUser> userManager)
+        public ProfiloController(UserManager<WriterUser> userManager)
         {
             _userManager = userManager;
         }
@@ -20,6 +20,7 @@ namespace PortfolioProject.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            ViewBag.active = "Portfolio";
             //giriş yapmış kullanıcıyı name göre getirir.
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             UserEditViewModel userEditViewModel = new UserEditViewModel

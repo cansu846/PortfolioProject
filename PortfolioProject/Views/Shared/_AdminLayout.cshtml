@@ -1,25 +1,11 @@
-﻿<!--
-=========================================================
-* Argon Dashboard - v1.2.0
-=========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-
-
-* Copyright  Creative Tim (http://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
-
-
-=========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
+﻿@*Adminde tanımlanan partial viewsler kullanılmadı bunlar silinebilir*@
 <!DOCTYPE html>
 <html>
 
-@await Html.PartialAsync("/Views/Admin/HeadPartial.cshtml")
+@await Html.PartialAsync("/Views/Dashboard/HeadPartial.cshtml")
 <body>
     <!-- Sidenav -->
-@await Html.PartialAsync("/Views/Admin/SideNavbarPartial.cshtml")
+@await Html.PartialAsync("/Views/Dashboard/SideNavbarPartial.cshtml")
 
     <div class="main-content" id="panel">
         <!-- Topnav -->
@@ -50,6 +36,7 @@
     <!-- Core -->
 @*     @await Html.PartialAsync("/Views/Admin/ScriptPartial.cshtml");
  *@    @await Html.PartialAsync("/Views/Dashboard/ScriptPartial.cshtml");
+   
 
 
 </body>

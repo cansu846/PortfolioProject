@@ -15,6 +15,7 @@ namespace PortfolioProject.Controllers
         //Duyuruları görüntülemek için kullanılır
         public IActionResult Index()
         {
+            ViewBag.active = "Default";
             return View();
         }
         public PartialViewResult Header()
@@ -49,6 +50,19 @@ namespace PortfolioProject.Controllers
             return RedirectToAction("Index","Default");
         }
 
-   
+        [HttpPost]
+        public IActionResult SendUserMessage(UserMessage m)
+        {
+            IUserMessageService _messageService = new UserMessageManager(new EfUserMessageDal());
+            m.Date = System.DateTime.Now;
+            m.Status = true;
+            _messageService.Add(m);
+
+            //aşağdakide kullanılabilir
+            //return Redirect("/Default/Index/")
+            return RedirectToAction("Index", "Default");
+        }
+
+
     }
 }

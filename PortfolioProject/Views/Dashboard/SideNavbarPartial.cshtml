@@ -23,69 +23,69 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/Dashboard/Index/">
+                        <a class="nav-link  @(ViewBag.active == "Dashboard" ? "active" : "")" href="/Dashboard/Index/">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Admin/Index/">
+                        <a class="nav-link  @(ViewBag.active == "Admin" ? "active" : "")" href="/Admin/Index/">
                             <i class="ni ni-planet text-orange"></i>
                             <span class="nav-link-text">Admin</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/About/Index/">
+                        <a class="nav-link @(ViewBag.active=="About" ? "active" : "")" href="/About/Index/">
                             <i class="ni ni-book-bookmark text-default"></i>
                             <span class="nav-link-text">About</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Service/Index/">
+                        <a class="nav-link @(ViewBag.active=="Service" ? "active" : "")" href="/Service/Index/">
                             <i class="ni ni-support-16 text-yellow"></i>
                             <span class="nav-link-text">Services</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Skill/Index/">
+                        <a class="nav-link @(ViewBag.active=="Skill" ? "active" : "")" href="/Skill/Index/">
                             <i class="ni ni-bullet-list-67 text-default"></i>
                             <span class="nav-link-text">Skills</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Experience/Index/">
+                        <a class="nav-link @(ViewBag.active=="Experience" ? "active" : "")" href="/Experience/Index/">
                             <i class="ni ni-paper-diploma text-default"></i>
                             <span class="nav-link-text">Experience</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Portfolio/Index/">
+                        <a class="nav-link @(ViewBag.active=="Portfolio" ? "active" : "")" href="/Portfolio/Index/">
                             <i class="ni ni-shop text-default"></i>
                             <span class="nav-link-text">Portfolio</span>
                         </a>
                     </li>
                 
                     <li class="nav-item">
-                        <a class="nav-link" href="/Announcement/Index/">
+                        <a class="nav-link @(ViewBag.active=="Announcement" ? "active" : "")" href="/Announcement/Index/">
                             <i class=" ni ni-notification-70 text-default"></i>
                             <span class="nav-link-text">Announcement</span>
                         </a>
                     </li>
                    
                     <li class="nav-item">
-                        <a class="nav-link" href="/Auth/Login/">
+                        <a class="nav-link @(ViewBag.active=="Login" ? "active" : "")" href="/Auth/Login/">
                             <i class="ni ni-key-25 text-info"></i>
                             <span class="nav-link-text">Login</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Auth/Register/">
+                        <a class="nav-link @(ViewBag.active=="Register" ? "active" : "")" href="/Auth/Register/">
                             <i class="ni ni-circle-08 text-pink"></i>
                             <span class="nav-link-text">Register</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Auth/LogOut/">
+                        <a class="nav-link @(ViewBag.active=="Logout" ? "active" : "")" href="/Auth/LogOut/">
                             <i class="ni ni-user-run text-red"></i>
                             <span class="nav-link-text">Logout</span>
                         </a>
