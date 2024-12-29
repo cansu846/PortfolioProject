@@ -41,7 +41,7 @@
 #### ✨ UI/Api Layer:
  <p> Projemizde Mvc kullıldı. Kullanıcı ile etkileşime geçilen katmandır. Burası bir Form uygulaması, Web sayfası veya bir Console uygulaması olabilir. Temel olarak Get ve Post işlemleri ile veri alışverişi yapılır.</p>
  
-<img src="[https://github.com/user-attachments/assets/a1b6d908-190e-40e7-912e-cc6f4d7c7f96](https://github.com/user-attachments/assets/387a6649-be3d-4e71-88ca-1829981e93a6)" alt="Description" width="300" height="auto">
+<img src="https://github.com/user-attachments/assets/387a6649-be3d-4e71-88ca-1829981e93a6" alt="Description" width="400" height="auto">
 
    - <b>Abstract:</b> Soyut sınıfların tutulduğu kısımdır.
 
@@ -76,7 +76,7 @@ gibi işlemleri kolayca gerçekleştirebilmenizi sağlar.</p>
 
 <p> Dil Tümleşik Sorgu (Dile Entegre Edilmiş Sorgu); Koleksiyonlar, ADO.Net DataSet, XML, SQL Server, Entity Framework ve diğer veri tabanları gibi farklı veri kaynağı türlerinden veri almak için oluşturulmuş bir sorgu sözdizimidir.</p>
 
-![image](https://github.com/user-attachments/assets/80e00ac6-1f7f-472a-b17b-7e819a9a3724)
+<img src="(https://github.com/user-attachments/assets/80e00ac6-1f7f-472a-b17b-7e819a9a3724" alt="Description" width="400" height="auto">
 
 #### 🪄 SignalR:
 
