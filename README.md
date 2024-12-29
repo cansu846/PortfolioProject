@@ -33,17 +33,27 @@
 ### Business Layer:
   İş kodlarımızın ve kurallarımızın yazıldığı katmandır. Program UI kısmının veri tabanı isteklerini(request) karşılamadan önce bu katmandaki iş kurallarından geçmelidir. Aynı zamanda encryption(şifreleme) işlemleri ve yetki işlemleri de bu katmanda yapılır. Örneğin sadece admin yetkisine sahip kullanıcıların admin panele erişebilmesini istiyorsanız işlemler bu katmanda gerçekleştirilir. Business katmanı Data Access katmanına erişebilir.
 ### UI/Api Layer:
-  Projemizde Mvc kullıldı. Kullanıcı ile etkileşime geçilen katmandır. Burası bir Form uygulaması, Web sayfası veya bir Console uygulaması olabilir. Temel olarak Get ve Post işlemleri ile veri alışverişi yapılır. 
+  Projemizde Mvc kullıldı. Kullanıcı ile etkileşime geçilen katmandır. Burası bir Form uygulaması, Web sayfası veya bir Console uygulaması olabilir. Temel olarak Get ve Post işlemleri ile veri alışverişi yapılır.
+  
 ![Screenshot 2024-12-29 171359](https://github.com/user-attachments/assets/0f58fe19-28b6-4812-af30-6656b80f92bb)
+
 <b>Abstract:</b> Soyut sınıfların tutulduğu kısımdır.
-Concrete: Somut sınıfların tutulduğu kısımdır.
+<b>Concrete</b>: Somut sınıfların tutulduğu kısımdır.
   
 Entity framework
+
 Code first
+
 Identity
+
 UserManager
+
 Mvc
+
 Admin Panel
+
 Linq 
+
 MsSql
+
 Signalr
