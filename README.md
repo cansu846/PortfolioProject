@@ -73,13 +73,13 @@ gibi işlemleri kolayca gerçekleştirebilmenizi sağlar.</p>
 
 <p> Verileri depolamak, yönetmek, işlemek ve analiz etmek için SQL (Structured Query Language) kullanılan veritabanı yönetim sistemidir.</p>
 
-#### LINQ (Language Integrated Query):
+#### 👌 LINQ (Language Integrated Query):
 
 <p> Dil Tümleşik Sorgu (Dile Entegre Edilmiş Sorgu); Koleksiyonlar, ADO.Net DataSet, XML, SQL Server, Entity Framework ve diğer veri tabanları gibi farklı veri kaynağı türlerinden veri almak için oluşturulmuş bir sorgu sözdizimidir.</p>
 
 ![image](https://github.com/user-attachments/assets/80e00ac6-1f7f-472a-b17b-7e819a9a3724)
 
-#### 👑 SignalR:
+#### 🪄 SignalR:
 
 <p> Gerçek zamanlı uygulamalar geliştirmek için yazılmış açık kaynak kodlu bir .NET kütüphanedir. Normal HTTP bağlantılarında client-server iletişimi her istekte yenilenirken, SignalR ile client ve server arasında sürekli bir bağlantı sağlanır. Request-Response’den ziyade SignalR’da RPC (Remote Procedure Calls) özelliği ile tarayacımızda client tarafındaki Javascripti server tarafında çağırır. Bir veride değişiklik olduğunda Server bir Javascript metodunu çağırarak bunu Client yada Client’lara haber verir. WebSocket protokolünü kullanır ancak HTTP protokolü olsaydı, bu güncellemeyi yapmak için sayfayı yenilememiz gerekirdi. </p> 
 <p> Projemizde Header kısmında yer alan istatistikler için değişiklik olması durumunda güncellenmesi amacıyla <b>SignalR</b> kullanılmıştır.</p>
