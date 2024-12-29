@@ -20,11 +20,11 @@
 ![Screenshot 2024-12-29 012233](https://github.com/user-attachments/assets/70605889-699a-4b67-a890-44dcd64ac701)
 ![Screenshot 2024-12-29 012251](https://github.com/user-attachments/assets/29fddc96-d21a-4fac-9a99-24e07c105f4b)
 
-![image](https://github.com/user-attachments/assets/a1b6d908-190e-40e7-912e-cc6f4d7c7f96)
-
 # 🚀 Used Teknolojies
 
 ### Katmanlı Mimari
+
+![image](https://github.com/user-attachments/assets/a1b6d908-190e-40e7-912e-cc6f4d7c7f96)
 
 #### ✨ Entity Layer: 
   <p>Bu katmanda veri tabanı tablolarımıza karşılık gelen classları tutarız.Varlıklara ait sınıflar oluşturulur daha sonra code first yaklaşımıyla package manager console kullanılarak migration işlemi uygulanır. Böylece varlıklarım veya değişikliklerim veritabanına yansıtılır. Bu işelemleri gerçekleştirmek için Manage NuGet Packages kısmından bağımlılıkları yüklememiz gerekmektedir.</p>
