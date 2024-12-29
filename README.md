@@ -23,6 +23,7 @@
 # 🚀 Used Teknolojies
 
 ### Katmanlı Mimari
+<img src="https://github.com/user-attachments/assets/a1b6d908-190e-40e7-912e-cc6f4d7c7f96" alt="Description" width="300" height="auto">
 
 ![image](https://github.com/user-attachments/assets/a1b6d908-190e-40e7-912e-cc6f4d7c7f96)
 
