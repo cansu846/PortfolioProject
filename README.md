@@ -35,9 +35,11 @@
 ### UI/Api Layer:
   Projemizde Mvc kullıldı. Kullanıcı ile etkileşime geçilen katmandır. Burası bir Form uygulaması, Web sayfası veya bir Console uygulaması olabilir. Temel olarak Get ve Post işlemleri ile veri alışverişi yapılır.
   
-![Screenshot 2024-12-29 171359](https://github.com/user-attachments/assets/0f58fe19-28b6-4812-af30-6656b80f92bb)
+![Screenshot 2024-12-29 171359](https://github.com/user-attachments/assets/387a6649-be3d-4e71-88ca-1829981e93a6)
+
 
 <b>Abstract:</b> Soyut sınıfların tutulduğu kısımdır.
+
 <b>Concrete</b>: Somut sınıfların tutulduğu kısımdır.
   
 Entity framework
