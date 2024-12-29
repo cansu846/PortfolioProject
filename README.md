@@ -23,9 +23,7 @@
 # 🚀 Used Teknolojies
 
 ### Katmanlı Mimari
-<img src="https://github.com/user-attachments/assets/a1b6d908-190e-40e7-912e-cc6f4d7c7f96" alt="Description" width="300" height="auto">
-
-![image](https://github.com/user-attachments/assets/a1b6d908-190e-40e7-912e-cc6f4d7c7f96)
+<img src="https://github.com/user-attachments/assets/a1b6d908-190e-40e7-912e-cc6f4d7c7f96" alt="Description" width="400" height="auto">
 
 #### ✨ Entity Layer: 
   <p>Bu katmanda veri tabanı tablolarımıza karşılık gelen classları tutarız.Varlıklara ait sınıflar oluşturulur daha sonra code first yaklaşımıyla package manager console kullanılarak migration işlemi uygulanır. Böylece varlıklarım veya değişikliklerim veritabanına yansıtılır. Bu işelemleri gerçekleştirmek için Manage NuGet Packages kısmından bağımlılıkları yüklememiz gerekmektedir.</p>
@@ -42,8 +40,8 @@
   
 #### ✨ UI/Api Layer:
  <p> Projemizde Mvc kullıldı. Kullanıcı ile etkileşime geçilen katmandır. Burası bir Form uygulaması, Web sayfası veya bir Console uygulaması olabilir. Temel olarak Get ve Post işlemleri ile veri alışverişi yapılır.</p>
-
-![Screenshot 2024-12-29 171359](https://github.com/user-attachments/assets/387a6649-be3d-4e71-88ca-1829981e93a6)
+ 
+<img src="[https://github.com/user-attachments/assets/a1b6d908-190e-40e7-912e-cc6f4d7c7f96](https://github.com/user-attachments/assets/387a6649-be3d-4e71-88ca-1829981e93a6)" alt="Description" width="300" height="auto">
 
    - <b>Abstract:</b> Soyut sınıfların tutulduğu kısımdır.
 
