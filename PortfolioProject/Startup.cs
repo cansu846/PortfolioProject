@@ -19,6 +19,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using PortfolioProject.SignalRHub;
 
 namespace PortfolioProject
 {
@@ -79,19 +80,31 @@ namespace PortfolioProject
 
             services.AddScoped<IPasswordHasher<WriterUser>, PasswordHasher<WriterUser>>();
 
+            services.AddSignalR();
 
-            //// Authentication ve Authorization için gerekli servisler ekleniyor
-            //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            //        .AddCookie(options =>
-            //        {
-            //            options.Cookie.HttpOnly = true;
-            //            options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
-            //            options.LoginPath = "/Auth/Login/"; // Giri? sayfas?
-            //            options.AccessDeniedPath = "/ErrorPage/Index/"; // Yetki eksikli?i sayfas?
-            //        });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder =>
+                {
+                    //builder.WithOrigins("https://localhost:44444", "https://localhost:55555").  //?stedi?imiz kadar client ekleyebiliyoruz.
+                    builder.AllowAnyOrigin().
+                    AllowAnyHeader().
+                     AllowAnyMethod();
+                     //AllowCredentials();
+                });
+            });
+                //// Authentication ve Authorization için gerekli servisler ekleniyor
+                //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                //        .AddCookie(options =>
+                //        {
+                //            options.Cookie.HttpOnly = true;
+                //            options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+                //            options.LoginPath = "/Auth/Login/"; // Giri? sayfas?
+                //            options.AccessDeniedPath = "/ErrorPage/Index/"; // Yetki eksikli?i sayfas?
+                //        });
 
-            // MVC ekleniyor ve global yetkilendirme politikas? tan?mlan?yor
-            services.AddControllersWithViews(config =>
+                // MVC ekleniyor ve global yetkilendirme politikas? tan?mlan?yor
+                services.AddControllersWithViews(config =>
             {
                 // Varsay?lan yetkilendirme politikas?: Kimlik do?rulamas? gereksinimi
                 var policy = new AuthorizationPolicyBuilder()
@@ -134,6 +147,8 @@ namespace PortfolioProject
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseCors("CorsPolicy");  //Tan?mlad???m?z Policy'i kullan?yoruz.
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
@@ -144,6 +159,8 @@ namespace PortfolioProject
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHub<DashboardStatisticHub>("/DashboardStatisticHub");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

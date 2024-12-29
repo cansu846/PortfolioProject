@@ -1,4 +1,50 @@
-﻿  <!-- Header -->
+﻿
+<script src="~/lib/microsoft-signalr/signalr.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(() => {
+
+            var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:5001/DashboardStatisticHub").build();
+
+            connection.start().then(() => {
+                    $("#connstatus").text(connection.state);
+
+                    setInterval(()=>{
+                        //Methoda istekte bulunur
+                    connection.invoke("SendTotalUser");
+                    connection.invoke("SendTotalMessage");
+                    connection.invoke("SendTotalProject");
+                    connection.invoke("SendTotalAnnouncement");
+
+                    }, 1000);
+
+
+                    // connection.invoke("SendActiveCategoryCount");
+                }).catch((err) => { console.log(err) });
+
+
+      
+             connection.on("ReceiveTotalUser", (value) => {
+                        $('#user').text(value);
+                });
+
+             connection.on("ReceiveTotalMessage", (value) => {
+                        $('#message').text(value);
+                });
+             connection.on("ReceiveTotalProject", (value) => {
+                    $('#project').text(value);
+                });
+             connection.on("ReceiveTotalAnnouncement", (value) => {
+                    $('#announcement').text(value);
+                });
+
+    });
+ </script>
+
+@*Test for connection *@
+@* <div id="txtName"></div> *@
 <!-- Header -->
 <div class="header bg-primary pb-6">
     <div class="container-fluid">
@@ -28,7 +74,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Total projects</h5>
-                                    <span class="h2 font-weight-bold mb-0">@ViewBag.totalProject</span>
+                                    <span class="h2 font-weight-bold mb-0" id="project">@ViewBag.totalProject</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
@@ -50,7 +96,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Total User</h5>
-                                    <span class="h2 font-weight-bold mb-0">@ViewBag.totalUser</span>
+                                    <span class="h2 font-weight-bold mb-0" id="user">0</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -72,7 +118,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Messages</h5>
-                                    <span class="h2 font-weight-bold mb-0">@ViewBag.totalMessage</span>
+                                    <span class="h2 font-weight-bold mb-0" id="message">0</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -93,8 +139,8 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <h5 class="card-title text-uppercase text-muted mb-0">Testimonials</h5>
-                                    <span class="h2 font-weight-bold mb-0">@ViewBag.totalReferance</span>
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Announcement</h5>
+                                    <span class="h2 font-weight-bold mb-0" id="announcement">0</span>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
