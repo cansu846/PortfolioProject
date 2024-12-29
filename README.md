@@ -50,20 +50,20 @@
   Entity Framework ORM(Object Relational Mapping) araçlarından biridir. ORM, ilişkisel veritabanı ile nesneye yönelik programlama(OOP) arasında bir köprü görevi gören araçtır. Veritabanına bizim nesnelerimizi bağlayan ve bizim için veri alışverişini yapan Microsoft tarafından geliştirilmiş bir framework’tür. <b>Code first</> yaklaşımı kullanılarak, ilk olarak sınıflar yazıldı ardından veritabanına yansıtıldı.
 
 #### Identity:
-Projemizde AspNet Identity kullanılmıştır. Identity Microsoft tarafından geliştirilen ve üyelik sistemi inşa etmek amacıyla kullanılan bir kütüphanedir. Bu ihtiyaç doğduğunda, sıfırdan bir sistem kodlamak yerine, hazır kütüphanelerden biri olan Identity’i kullanmak, hız açısından önemli avantajlar sağlar. Identity’nin kendi temel tabloları bulunmaktadır ve bu tablolar, üyelik sistemi için temel yapı taşlarını oluşturur. Bu tablolarda gereksiz karmaşıklık bulunmamaktadır ve ihtiyaç duyulduğunda tablolara müdahale edilebilir. Ayrıca, ilgili tabloların OAuth 2.0 ve OpenID Connect gibi protokollere uygun olması, bu tabloları kullanarak farklı tablolar oluşturmak için zaman ve çaba harcamaktan kaçınmamıza olanak tanır.
+  Projemizde AspNet Identity kullanılmıştır. Identity Microsoft tarafından geliştirilen ve üyelik sistemi inşa etmek amacıyla kullanılan bir kütüphanedir. Bu ihtiyaç doğduğunda, sıfırdan bir sistem kodlamak yerine, hazır kütüphanelerden biri olan Identity’i kullanmak, hız açısından önemli avantajlar sağlar. Identity’nin kendi temel tabloları bulunmaktadır ve bu tablolar, üyelik sistemi için temel yapı taşlarını oluşturur. Bu tablolarda gereksiz karmaşıklık bulunmamaktadır ve ihtiyaç duyulduğunda tablolara müdahale edilebilir. Ayrıca, ilgili tabloların OAuth 2.0 ve OpenID Connect gibi protokollere uygun olması, bu tabloları kullanarak farklı tablolar oluşturmak için zaman ve çaba harcamaktan kaçınmamıza olanak tanır.
 
   Identity’nin sunduğu tabloların yanı sıra, isteğe bağlı olarak özel tablolar da oluşturulabilir. Özellikle kullanıcı ve rol tablolarına doğrudan müdahale edebilme yeteneği önemli bir avantaj sağlar. Projemizde WrtierUser sınıfı kullanılarak AspNetUsers ve WriterRole sınıfı kullanılarak AspNetRoles tablosunun özellikleri genişletilmiştir.
 
 #### UserManager:
-  Microsoft's ASP.NET Core Identity frameworkünün bir parçasıdır ve kullanıcı yönetimi için bir sınıf olarak kullanılır. Kullanıcıların 
-- Kimlik doğrulaması (authentication),
-- Yetkilendirilmesi (authorization), 
-- Kullanıcı bilgilerini güncelleme
-- Şifre doğrulama ve değiştirme
-- Kullanıcı rolleriyle çalışma
-- İki faktörlü kimlik doğrulama
-- Token oluşturma ve doğrulamayönetimi
-gibi işlemleri kolayca gerçekleştirebilmenizi sağlar.
+    Microsoft's ASP.NET Core Identity frameworkünün bir parçasıdır ve kullanıcı yönetimi için bir sınıf olarak kullanılır. Kullanıcıların 
+  - Kimlik doğrulaması (authentication),
+  - Yetkilendirilmesi (authorization), 
+  - Kullanıcı bilgilerini güncelleme
+  - Şifre doğrulama ve değiştirme
+  - Kullanıcı rolleriyle çalışma
+  - İki faktörlü kimlik doğrulama
+  - Token oluşturma ve doğrulamayönetimi
+  gibi işlemleri kolayca gerçekleştirebilmenizi sağlar.
 
 ### MsSql: 
   Verileri depolamak, yönetmek, işlemek ve analiz etmek için SQL (Structured Query Language) kullanılan veritabanı yönetim sistemidir.
