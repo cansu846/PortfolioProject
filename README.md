@@ -76,7 +76,7 @@ gibi işlemleri kolayca gerçekleştirebilmenizi sağlar.</p>
 
 <p> Dil Tümleşik Sorgu (Dile Entegre Edilmiş Sorgu); Koleksiyonlar, ADO.Net DataSet, XML, SQL Server, Entity Framework ve diğer veri tabanları gibi farklı veri kaynağı türlerinden veri almak için oluşturulmuş bir sorgu sözdizimidir.</p>
 
-<img src="https://github.com/user-attachments/assets/80e00ac6-1f7f-472a-b17b-7e819a9a3724" alt="Description" width="400" height="auto">
+<img src="https://github.com/user-attachments/assets/80e00ac6-1f7f-472a-b17b-7e819a9a3724" alt="Description" width="300" height="auto">
 
 #### 🪄 SignalR:
 
