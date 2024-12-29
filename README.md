@@ -47,35 +47,41 @@
  - <b>Concrete</b>: Somut sınıfların tutulduğu kısımdır.
   
 #### Entity Framework:
-  Entity Framework ORM(Object Relational Mapping) araçlarından biridir. ORM, ilişkisel veritabanı ile nesneye yönelik programlama(OOP) arasında bir köprü görevi gören araçtır. Veritabanına bizim nesnelerimizi bağlayan ve bizim için veri alışverişini yapan Microsoft tarafından geliştirilmiş bir framework’tür. <b>Code first</> yaklaşımı kullanılarak, ilk olarak sınıflar yazıldı ardından veritabanına yansıtıldı.
+  Entity Framework ORM(Object Relational Mapping) araçlarından biridir. ORM, ilişkisel veritabanı ile nesneye yönelik programlama(OOP) arasında bir köprü görevi gören araçtır. Veritabanına bizim nesnelerimizi bağlayan ve bizim için veri alışverişini yapan Microsoft tarafından geliştirilmiş bir framework’tür. <b>Code first</b> yaklaşımı kullanılarak, ilk olarak sınıflar yazıldı ardından veritabanına yansıtıldı.
 
 #### Identity:
-  Projemizde AspNet Identity kullanılmıştır. Identity Microsoft tarafından geliştirilen ve üyelik sistemi inşa etmek amacıyla kullanılan bir kütüphanedir. Bu ihtiyaç doğduğunda, sıfırdan bir sistem kodlamak yerine, hazır kütüphanelerden biri olan Identity’i kullanmak, hız açısından önemli avantajlar sağlar. Identity’nin kendi temel tabloları bulunmaktadır ve bu tablolar, üyelik sistemi için temel yapı taşlarını oluşturur. Bu tablolarda gereksiz karmaşıklık bulunmamaktadır ve ihtiyaç duyulduğunda tablolara müdahale edilebilir. Ayrıca, ilgili tabloların OAuth 2.0 ve OpenID Connect gibi protokollere uygun olması, bu tabloları kullanarak farklı tablolar oluşturmak için zaman ve çaba harcamaktan kaçınmamıza olanak tanır.
+
+Projemizde AspNet Identity kullanılmıştır. Identity Microsoft tarafından geliştirilen ve üyelik sistemi inşa etmek amacıyla kullanılan bir kütüphanedir. Bu ihtiyaç doğduğunda, sıfırdan bir sistem kodlamak yerine, hazır kütüphanelerden biri olan Identity’i kullanmak, hız açısından önemli avantajlar sağlar. Identity’nin kendi temel tabloları bulunmaktadır ve bu tablolar, üyelik sistemi için temel yapı taşlarını oluşturur. Bu tablolarda gereksiz karmaşıklık bulunmamaktadır ve ihtiyaç duyulduğunda tablolara müdahale edilebilir. Ayrıca, ilgili tabloların OAuth 2.0 ve OpenID Connect gibi protokollere uygun olması, bu tabloları kullanarak farklı tablolar oluşturmak için zaman ve çaba harcamaktan kaçınmamıza olanak tanır.
 
   Identity’nin sunduğu tabloların yanı sıra, isteğe bağlı olarak özel tablolar da oluşturulabilir. Özellikle kullanıcı ve rol tablolarına doğrudan müdahale edebilme yeteneği önemli bir avantaj sağlar. Projemizde WrtierUser sınıfı kullanılarak AspNetUsers ve WriterRole sınıfı kullanılarak AspNetRoles tablosunun özellikleri genişletilmiştir.
 
 #### UserManager:
-    Microsoft's ASP.NET Core Identity frameworkünün bir parçasıdır ve kullanıcı yönetimi için bir sınıf olarak kullanılır. Kullanıcıların 
+
+Microsoft's ASP.NET Core Identity frameworkünün bir parçasıdır ve kullanıcı yönetimi için bir sınıf olarak kullanılır. Kullanıcıların 
   - Kimlik doğrulaması (authentication),
   - Yetkilendirilmesi (authorization), 
   - Kullanıcı bilgilerini güncelleme
   - Şifre doğrulama ve değiştirme
   - Kullanıcı rolleriyle çalışma
   - İki faktörlü kimlik doğrulama
-  - Token oluşturma ve doğrulamayönetimi
-  gibi işlemleri kolayca gerçekleştirebilmenizi sağlar.
+  - Token oluşturma ve doğrulamayönetimi   
+gibi işlemleri kolayca gerçekleştirebilmenizi sağlar.
 
 ### MsSql: 
+
   Verileri depolamak, yönetmek, işlemek ve analiz etmek için SQL (Structured Query Language) kullanılan veritabanı yönetim sistemidir.
 
 #### LINQ (Language Integrated Query):
+
    Dil Tümleşik Sorgu (Dile Entegre Edilmiş Sorgu); Koleksiyonlar, ADO.Net DataSet, XML, SQL Server, Entity Framework ve diğer veri tabanları gibi farklı veri kaynağı türlerinden veri almak için oluşturulmuş bir sorgu sözdizimidir. 
 
 ![image](https://github.com/user-attachments/assets/80e00ac6-1f7f-472a-b17b-7e819a9a3724)
 
 #### SignalR:
+
   Gerçek zamanlı uygulamalar geliştirmek için yazılmış açık kaynak kodlu bir .NET kütüphanedir. Normal HTTP bağlantılarında client-server iletişimi her istekte yenilenirken, SignalR ile client ve server arasında sürekli bir bağlantı sağlanır. Request-Response’den ziyade SignalR’da RPC (Remote Procedure Calls) özelliği ile tarayacımızda client tarafındaki Javascripti server tarafında çağırır. Bir veride değişiklik olduğunda Server bir Javascript metodunu çağırarak bunu Client yada Client’lara haber verir. WebSocket protokolünü kullanır ancak HTTP protokolü olsaydı, bu güncellemeyi yapmak için sayfayı yenilememiz gerekirdi.   
   Projemizde Header kısmında yer alan istatistikler için değişiklik olması durumunda güncellenmesi amacıyla <b>SignalR</b> kullanılmıştır.
   
 #### Admin Panel:
+
   Tüm CRUD operasyonlarının gerçekleştirildiği kısımdır. Login yapan adminin rollerine göre yetkilendirmeler yapılmıştır. 
