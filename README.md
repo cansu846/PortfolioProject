@@ -20,8 +20,12 @@
 ![Screenshot 2024-12-29 012233](https://github.com/user-attachments/assets/70605889-699a-4b67-a890-44dcd64ac701)
 ![Screenshot 2024-12-29 012251](https://github.com/user-attachments/assets/29fddc96-d21a-4fac-9a99-24e07c105f4b)
 
-### Katmanlı Mimari
 ![image](https://github.com/user-attachments/assets/a1b6d908-190e-40e7-912e-cc6f4d7c7f96)
+
+![Screenshot 2024-12-29 171359](https://github.com/user-attachments/assets/387a6649-be3d-4e71-88ca-1829981e93a6)
+
+### Katmanlı Mimari
+
 #### Entity Layer: 
   Bu katmanda veri tabanı tablolarımıza karşılık gelen classları tutarız.Varlıklara ait sınıflar oluşturulur daha sonra code first yaklaşımıyla package manager console kullanılarak migration işlemi uygulanır. Böylece varlıklarım veya değişikliklerim veritabanına yansıtılır. Bu işelemleri gerçekleştirmek için Manage NuGet Packages kısmından bağımlılıkları yüklememiz gerekmektedir.
   - Microsoft.EntityFrameworkCore
@@ -34,9 +38,6 @@
   İş kodlarımızın ve kurallarımızın yazıldığı katmandır. Program UI kısmının veri tabanı isteklerini(request) karşılamadan önce bu katmandaki iş kurallarından geçmelidir. Aynı zamanda encryption(şifreleme) işlemleri ve yetki işlemleri de bu katmanda yapılır. Örneğin sadece admin yetkisine sahip kullanıcıların admin panele erişebilmesini istiyorsanız işlemler bu katmanda gerçekleştirilir. Business katmanı Data Access katmanına erişebilir.
 ### UI/Api Layer:
   Projemizde Mvc kullıldı. Kullanıcı ile etkileşime geçilen katmandır. Burası bir Form uygulaması, Web sayfası veya bir Console uygulaması olabilir. Temel olarak Get ve Post işlemleri ile veri alışverişi yapılır.
-  
-![Screenshot 2024-12-29 171359](https://github.com/user-attachments/assets/387a6649-be3d-4e71-88ca-1829981e93a6)
-
 
 <b>Abstract:</b> Soyut sınıfların tutulduğu kısımdır.
 
