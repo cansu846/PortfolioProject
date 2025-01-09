@@ -1,0 +1,36 @@
+﻿@model Testimonial
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="p-4">
+    <h1 class="text-center p-3">Add Testimonial</h1>
+
+    <form method="post" action="/Testimonial/AddTestimonial/">
+        <div class="form-group">
+            <label for="ClientName">Name</label>
+            <input type="text" class="form-control" id="ClientName" name="ClientName" placeholder="Enter Skill">
+        </div>
+        <div class="form-group">
+            <label for="Role">Role</label>
+            <input type="text" class="form-control" id="Role" name="Role">
+        </div>
+        <div class="form-group">
+            <label for="Company">Company</label>
+            <input type="text" class="form-control" id="Company" name="Company">
+        </div>
+        <div class="form-group">
+            <label for="Comment">Comment</label>
+            <input type="text" class="form-control" id="Comment" name="Comment" >
+        </div>
+
+        <div class="form-group">
+            <label for="ImageUrl">Image Url</label>
+            <input type="text" class="form-control" id="ImageUrl" name="ImageUrl">
+        </div>
+
+        <div class=" d-flex justify-content-end mr-3">
+            <button type="submit" class="btn btn-primary btn-md">Add</button>
+        </div>
+    </form>
+
+</div>

@@ -73,6 +73,9 @@ namespace PortfolioProject
             services.AddScoped<IWriterUserService, WriterUserManager>();
             services.AddScoped<IWriterUserDal, EfWriterUserDal>();
 
+            services.AddScoped<ITestimonialService, TestimonialManager>();
+            services.AddScoped<ITestimonialDal, EfTestimonialDal>();
+
             services.AddDbContext<Context>();
 
             services.AddIdentity<WriterUser, WriterRole>()

@@ -13,7 +13,7 @@ namespace PortfolioProject.Controllers
         }
         public IActionResult Index()
         {
-            ViewBag.activePage = "About";
+            ViewBag.active = "About";
             var values = _aboutService.GetAll();
             return View(values);
         }
